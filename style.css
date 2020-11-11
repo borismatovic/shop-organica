@@ -209,7 +209,7 @@ nav li a:hover{
     background-color: var(--secondary-color-ultralight);
     height: 3rem;
     border-radius: 10px;
-    margin-top: .5rem;
+    margin: .5rem 0;
     padding: 0 1rem;
 
     display: flex;
@@ -221,9 +221,9 @@ nav li a:hover{
     text-overflow: ellipsis;
 }
 
-.flex-wrapper-item + .flex-wrapper-item{
+/* .flex-wrapper-item + .flex-wrapper-item{
     margin-bottom: .5rem;
-}
+} */
 
 .flex-wrapper-text{
     flex: 1 1 auto;    
@@ -279,6 +279,11 @@ main{
     box-sizing: border-box;
 }
 
+.grid-item p,
+.grid-item img{
+    pointer-events: none;
+}
+
 .grid-item-wrapper{
     /* border: 1px solid purple; */
     box-sizing: initial;
@@ -323,6 +328,16 @@ footer{
     font-size: .85rem;
     color: var(--secondary-color-ultralight)
 }
+
+@media(max-width: 750px) {
+    .logo-wrapper-footer{
+        width: 8rem;
+    }
+
+    .text-footer{
+        font-size: .7rem;
+    }
+  }
 
 
 
