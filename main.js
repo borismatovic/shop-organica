@@ -2,7 +2,9 @@
 
 const cart_items_DOM = document.querySelectorAll('[data-action="ADD_TO_CART"]');
 const cart = [];
+const cartFull = []
 const cartGrid = document.querySelector('.flex-wrapper');
+let order = false;
 
 cart_items_DOM.forEach( element => {
     element.addEventListener('click', (e) => {
@@ -14,6 +16,7 @@ cart_items_DOM.forEach( element => {
         
         if(cart.filter(itemCart => itemCart === item.name).length === 0){
             cart.push(item.name);
+            cartFull.push(item);
             e.target.style.backgroundColor = '#e2f4c8';
             cartGrid.insertAdjacentHTML('beforeend', 
             `<div class="flex-wrapper-item">
@@ -31,6 +34,22 @@ cart_items_DOM.forEach( element => {
                     </div>
                 </div>      
             </div>`);
+
+            // console.log(cart)
+
+            if(cart.length > 0 && order === false){
+                cartGrid.insertAdjacentHTML('afterbegin', `<button class="order">PORUČI</button>`)
+                order = true;
+                document.querySelector('.order').addEventListener('click', () => {
+		            let cartStr = cartFull.map( item => JSON.stringify(item));
+                    localStorage.setItem("cartContent", cartStr);
+                    // console.log(localStorage.getItem("cartContent"));
+		            // document.getElementById('myTextarea').value = localStorage.getItem('cartContent');
+		            window.location.assign("order.html");
+                })
+
+            }
+
 
             const cartItemDOM = cartGrid.querySelectorAll('.flex-wrapper-item');
             const counterDOM = cartGrid.querySelectorAll('.flex-wrapper-count');
@@ -69,7 +88,14 @@ cart_items_DOM.forEach( element => {
                        element.remove()
                        e.target.style.backgroundColor = '#ddd';
                        removeItem(cart, item.name)
-                    console.log(cart);
+                       let cartFullIdx = cartFull.findIndex( el => el.name === item.name);
+                       cartFull.splice(cartFullIdx, 1)
+                       if(cart.length < 1){
+                        document.querySelector('.order').remove()
+                        order = false;
+                       }
+                       
+                    // console.log(cart);
                    })
                 }
             })
