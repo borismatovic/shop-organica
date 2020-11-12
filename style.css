@@ -7,6 +7,8 @@
     --secondary-color-dark: #6a5744;
     --secondary-color-light: #a48b70;
     --secondary-color-ultralight: hsl(30, 22%, 84%);
+
+    --tertiary-color: hsl(0, 40%, 60%);
 }
 
 /* * * * * */
@@ -240,7 +242,15 @@ nav li a:hover{
     width: 8rem;
 }
 
-.minus, .plus{
+.item-count p{
+    pointer-events: none;
+}
+
+.flex-wrapper-count{
+    padding: 0 .5rem;
+}
+
+.minus, .plus, .remove{
     background-color: var(--secondary-color-light);
     width: 2rem;
     height: 2rem;
@@ -250,6 +260,11 @@ nav li a:hover{
     justify-content: center;
     font-weight: bold;
     color: var(--secondary-color-ultralight);
+}
+
+.remove{
+    background-color: var(--tertiary-color);
+    margin-left: .5rem;
 }
 
 
