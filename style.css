@@ -104,7 +104,11 @@ body{
     justify-content: center;
     align-items: center;
     /* border: 1px solid yellow; */
-    height: 8rem;
+    padding: 4rem 0;
+}
+
+.hide{
+    display: none;
 }
 
 /* * * * * */
@@ -157,7 +161,7 @@ nav li a:hover{
 .hero{
     background: linear-gradient(to right, hsla(31,22%,34%,.5), hsla(31,22%,54%,.5)), url(img/hero.jpg) no-repeat bottom center;
     background-size: cover;
-    height: 8rem;
+    /* height: 18rem; */
 }
 
 .hero-title{
@@ -167,6 +171,47 @@ nav li a:hover{
     font-weight: 400;
     text-transform: uppercase;
 }
+
+.catFilters{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 0.5rem;
+
+}
+
+.catFilter{
+    border: 3px solid #ddd;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    width: 9rem;
+    text-align: center;
+    color: #ddd;
+    font-family: Roboto, sans-serif;
+    text-transform: uppercase;
+    background-color: hsla(31,22%,34%,.8);
+}
+
+.catFilter:hover {
+    background-color: hsla(31,22%,54%,.5);
+    cursor: pointer;
+}
+
+.catFilter:active {
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.catFilter p {
+    pointer-events: none;
+}
+
+.active{
+    background-color: var(--secondary-color-light);
+    color: var(--secondary-color-dark)
+    font-weight: bold;
+}
+
 
 @media(max-width: 750px) {
     header{
@@ -545,7 +590,7 @@ hr{
   .center{ 
     width: 100%; 
     text-align: center;
-    padding-bottom: 3rem;
+    padding: 2rem 0;
   }
 }
 

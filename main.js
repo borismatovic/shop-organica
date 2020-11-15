@@ -1,10 +1,60 @@
 'user strict'
 
+
+
+
 const cart_items_DOM = document.querySelectorAll('[data-action="ADD_TO_CART"]');
 const cart = [];
 const cartFull = []
 const cartGrid = document.querySelector('.flex-wrapper');
 let order = false;
+
+const itemFilters = document.querySelectorAll('.catFilter');
+itemFilters.forEach(element => element.addEventListener('click', () => {
+    
+    if(element.innerText === 'SVE') {
+        cart_items_DOM.forEach(element => element.classList.remove('hide'))
+        itemFilters.forEach( element => element.classList.remove('active'))
+        element.classList.add('active')
+    }
+    else if(element.innerText === 'HLEB') {
+        itemFilters.forEach( element => element.classList.remove('active'))
+        element.classList.add('active')
+        cart_items_DOM.forEach( element => {
+            if(!element.classList.contains('hleb')){
+                element.classList.add('hide')
+            } else element.classList.remove('hide')
+            
+        })
+    }
+    else if(element.innerText === 'ZAČIN') {
+        itemFilters.forEach( element => element.classList.remove('active'))
+        element.classList.add('active')
+        cart_items_DOM.forEach( element => {
+            if(!element.classList.contains('zacin')){
+                element.classList.add('hide')
+            } else element.classList.remove('hide')
+        })
+    }
+    else if(element.innerText === 'VOĆE') {
+        itemFilters.forEach( element => element.classList.remove('active'))
+        element.classList.add('active')
+        cart_items_DOM.forEach( element => {
+            if(!element.classList.contains('voce')){
+                element.classList.add('hide')
+            } else element.classList.remove('hide')
+        })
+    }
+    else if(element.innerText === 'OSTALO') {
+        itemFilters.forEach( element => element.classList.remove('active'))
+        element.classList.add('active')
+        cart_items_DOM.forEach( element => {
+            if(!element.classList.contains('ostalo')){
+                element.classList.add('hide')
+            } else element.classList.remove('hide')
+        })
+    }
+}))
 
 cart_items_DOM.forEach( element => {
     element.addEventListener('click', (e) => {
