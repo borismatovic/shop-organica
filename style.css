@@ -350,6 +350,7 @@ main{
     width: 15rem;   
     padding: 1rem;
     box-sizing: border-box;
+    flex-grow: 1;
 }
 
 .grid-item p,
