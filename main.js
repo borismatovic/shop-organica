@@ -61,7 +61,6 @@ cart_items_DOM.forEach( element => {
         const item = {
             name: e.target.querySelector('p').innerText,
             quantity: 1,
-            // image: e.target.querySelector('img').getAttribute('src'),
         }
         
         if(cart.filter(itemCart => itemCart === item.name).length === 0){
@@ -91,11 +90,9 @@ cart_items_DOM.forEach( element => {
                 cartGrid.insertAdjacentHTML('afterbegin', `<button class="order">PORUČI</button>`)
                 order = true;
                 document.querySelector('.order').addEventListener('click', () => {
-		            let cartStr = cartFull.map( item => JSON.stringify(item));
-                    localStorage.setItem("cartContent", cartStr);
-                    // console.log(localStorage.getItem("cartContent"));
-		            // document.getElementById('myTextarea').value = localStorage.getItem('cartContent');
-		            window.location.assign("order.html");
+                    cartFull.forEach( el => localStorage.setItem(el.name, JSON.stringify(el)))    
+                    // localStorage.setItem(item.name, JSON.stringify(item))////////////////////////////////////////////////
+                    window.location.assign("order.html");
                 })
 
             }
@@ -145,11 +142,9 @@ cart_items_DOM.forEach( element => {
                         order = false;
                        }
                        
-                    // console.log(cart);
                    })
                 }
             })
-            
         }
     })
 })

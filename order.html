@@ -9,26 +9,36 @@
     <title>Organica Shop</title>
 </head>
 
-<body onload="dumpStorage()">
+<body>
     <header>
         <div class="container">
             <div class="container-header">
                 <div class="logo-wrapper">
                     <a href="index.html"><img src="img/organica_logo.png" alt="Organica logotype" class="logo"></a>
                 </div>
-                <nav>
-                    <ul>
-                        <!-- <li>O nama</li> -->
-                        <!-- <li><a href="contact.html">Kontakt</a></li> -->
-                    </ul>
-                </nav>
             </div>
         </div>
     </header>
     <section class="hero">
         <div class="container">
-            <div class="center">
-                <h2 class="hero-title">Sveže namirnice po najpovoljnijim cenama</h2>
+            <div class="hero-logotypes">
+                <img src="img/logo_federalMinistry.svg" alt="company logotype" class="hero-logo">
+                <img src="img/logo_sequa.svg" alt="company logotype" class="hero-logo">
+                <img src="img/logo_developpp.png" alt="company logotype" class="hero-logo">
+            </div>
+            <div class="hero-title-wrapper">
+                <h2 class="hero-title">Projekat onlajn prodavnice Organica iniciran je i finansiran u okviru programa
+                    DeveloPPP uspostavljenog od strane Nemačkog ministarstva za razvoj i privrednu saradnju - BMZ i
+                    Sequa – neprofitne razvojne organizacije iz Nemačke.
+                </h2>
+                <h2 class="hero-title">Das Online-Shop-Projekt Organica wurde im Rahmen des DeveloPPP-Programms des BMZ
+                    - Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung und Sequa - einer deutschen
+                    gemeinnützigen Entwicklungsorganisation - initiiert und finanziert.
+                </h2>
+                <h2 class="hero-title">The online shop Organica project has been initiated and funded within the
+                    DeveloPPP program established by the BMZ - the German Federal Ministry of Economic Cooperation and
+                    Development and Sequa - a German non-profit development organization.
+                </h2>
             </div>
         </div>
     </section>
@@ -37,8 +47,7 @@
             <section class="order" id="order">
                 <div class="form-container">
                     <h2 class="order-heading">Narudžbenica</h2>
-                    <!-- <form method="POST" data-netlify="true" action="./success.html"> -->
-                    <form method="POST" data-netlify="true">
+                    <form method="POST" data-netlify="true" action="success.html">
                         <fieldset>
                             <legend><span class="number">1</span>Lični podaci</legend>
                             <div class="registration-fields">
@@ -77,12 +86,7 @@
         </div>
     </footer>
     <script src="main.js"></script>
-    <script>
-        function dumpStorage() {
-            document.getElementById('notes').value = localStorage.getItem('cartContent');
-            localStorage.clear();
-        }
-    </script>
+    <script src="order.js"></script>
 </body>
 
 </html>
