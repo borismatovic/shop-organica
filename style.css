@@ -252,6 +252,17 @@ nav li a:hover{
     }
   }
 
+  @media(max-width: 500px) {
+    
+    .logo-wrapper{
+        width: 10rem;
+    }
+
+    .hero-logo{
+        max-width: 6rem;
+    }
+  }
+
 /* * * * * */
 /*  CART */
 /* * * * * */
